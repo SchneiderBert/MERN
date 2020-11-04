@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.App {
+  text-align: center;
+  background-color: #0a3d65;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  color: bisque;
+}
+#generatorContainer {
+  margin-top: 1rem;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+.generatorArea {
+  width: 40vw;
+  max-height: 35vh;
+  overflow-y: scroll;
+  background-color: white;
+  list-style: none;
+  border: solid 0.2rem black;
+}
+
+.generatorArea::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* Chrome/Safari/Webkit */
+}
+
+/* @ >= 480px Mobile */
+@media only screen and (max-width: 480px){
+  #title {
+    border-bottom: groove 0.1rem bisque;
+    padding: 1rem;
+    font-size: 2rem;
+  }
+}
+
+/* @ 481-1023px tablet */
+@media only screen and (min-width: 481px){
+  #title {
+    border-bottom: groove 0.1rem bisque;
+    padding: 1rem;
+    font-size: 3rem;
+  }
+  .algoSelection {
+    background-color: white;
+    height: 10vh;
+    margin: 0.5rem 0;
+    color: black;
+    font-size: 2rem;
+    border-bottom: solid 0.1rem black;
+    border-top: solid 0.1rem black;
+    width: 100%;
+    padding: 1rem;
+
+  }
+}
+
+
+/* @ >= 1024px Desktop */
+@media only screen and (min-width: 1024px){
+  #title{
+    border-bottom: groove 0.1rem bisque;
+    padding: 1rem;
+    font-size: 4.3rem;
+  }
+
+}
+
