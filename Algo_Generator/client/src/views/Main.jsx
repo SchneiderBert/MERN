@@ -11,31 +11,31 @@ const Main = props => {
         let interval = setInterval(() => {
             timesrun += 1;
             let position = Math.floor(Math.random() * 401);
-            if (position < 26) {
-                selectedAlgo = document.getElementById("algo-1");
-            } else if (position > 26) {
-                selectedAlgo = document.getElementById("algo-2");
-            } else if (position > 76) {
-                selectedAlgo = document.getElementById("algo-3");
-            } else if (position > 126) {
-                selectedAlgo = document.getElementById("algo-4");
-            } else if (position > 176) {
-                selectedAlgo = document.getElementById("algo-5");
-            } else if (position > 226) {
-                selectedAlgo = document.getElementById("algo-6");
+            if (position > 326) {
+                selectedAlgo = document.getElementById("algo-7");
             } else if (position > 276) {
                 selectedAlgo = document.getElementById("algo-7");
-            } else if (position > 326) {
-                selectedAlgo = document.getElementById("algo-7");
-            } 
+            } else if (position > 226) {
+                selectedAlgo = document.getElementById("algo-6");
+            } else if (position > 176) {
+                selectedAlgo = document.getElementById("algo-5");
+            } else if (position > 126) {
+                selectedAlgo = document.getElementById("algo-4");
+            } else if (position > 76) {
+                selectedAlgo = document.getElementById("algo-3");
+            } else if (position > 26) {
+                selectedAlgo = document.getElementById("algo-2");
+            } else if (position < 26) {
+                selectedAlgo = document.getElementById("algo-1");
+            }
             // console.log(selectedAlgo);
             generator.scrollTo(0, position);
             if (timesrun === 50) {
                 console.log(selectedAlgo);
                 clearInterval(interval);
-                setTimeout(()=> {
-                    selectedAlgo.className = "algoSelection";
-                },500);
+                generator.scrollTo(0, position);
+                selectedAlgo.className = "algoSelection";
+
             }
         }, 80)
     }
