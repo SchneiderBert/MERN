@@ -6,10 +6,14 @@ const Main = props => {
 
     const generate = () => {
         const generator = document.querySelector(".generatorArea");
-        
-            setInterval(() => {
-               let position = Math.floor(Math.random() * 401);
-               generator.scrollTo(0, position);
+            let timesrun = 0;
+           let interval= setInterval(() => {
+             timesrun += 1;
+             let position = Math.floor(Math.random() * 401);
+             generator.scrollTo(0, position);
+             if(timesrun === 50 ){
+                clearInterval(interval);
+             }
 
             }, 80)
     }
