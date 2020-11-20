@@ -7,43 +7,36 @@ const Main = props => {
     const generate = () => {
         const generator = document.querySelector(".generatorArea");
         let timesrun = 0;
+        let selectedAlgo;
         let interval = setInterval(() => {
             timesrun += 1;
             let position = Math.floor(Math.random() * 401);
-
-            switch (position) {
-                case position < 26:
-                    position = 0;
-                    break;
-                case position > 26:
-                    position = 57;
-                    break;
-                case position > 76:
-                    position = 114;
-                    break;
-                case position > 76:
-                    position = 171;
-                    break;
-                case position > 126:
-                    position = 228;
-                    break;
-                case position > 176:
-                    position = 285;
-                    break;
-                case position > 226:
-                    position = 342;
-                    break;
-                case position > 276:
-                    position = 400;
-                    break;
-                default:
-                    break;
-            }
+            if (position < 26) {
+                selectedAlgo = document.getElementById("algo-1");
+            } else if (position > 26) {
+                selectedAlgo = document.getElementById("algo-2");
+            } else if (position > 76) {
+                selectedAlgo = document.getElementById("algo-3");
+            } else if (position > 126) {
+                selectedAlgo = document.getElementById("algo-4");
+            } else if (position > 176) {
+                selectedAlgo = document.getElementById("algo-5");
+            } else if (position > 226) {
+                selectedAlgo = document.getElementById("algo-6");
+            } else if (position > 276) {
+                selectedAlgo = document.getElementById("algo-7");
+            } else if (position > 326) {
+                selectedAlgo = document.getElementById("algo-7");
+            } 
+            // console.log(selectedAlgo);
             generator.scrollTo(0, position);
             if (timesrun === 50) {
+                console.log(selectedAlgo);
                 clearInterval(interval);
+                setTimeout(()=> {
+                    selectedAlgo.className = "algoSelection";
+                },500);
             }
-
         }, 80)
     }
 
