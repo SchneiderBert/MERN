@@ -9,3 +9,4 @@ app.use(express.json());
 
 
 require('./server/config/mongoose.config');
+require('./server/routes/algo.routes')(app);

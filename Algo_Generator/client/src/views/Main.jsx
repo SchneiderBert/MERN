@@ -1,10 +1,16 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import AlgorithmGenerator from '../components/AlgorithmGenerator';
+import axios from 'axios';
 
 
 const Main = props => {
 
     const generate = () => {
+        axios.get('http://localhost:8000/api/algorithms')
+        .then(res => {
+            console.log(res.data, 'This will be the Algorithms from the backend');
+        })
+        .catch(err => console.log(err));
         const generator = document.querySelector(".generatorArea");
         let timesrun = 0;
         let selectedAlgo;
@@ -34,7 +40,10 @@ const Main = props => {
                 console.log(selectedAlgo);
                 clearInterval(interval);
                 generator.scrollTo(0, position);
-                selectedAlgo.className = "algoSelection";
+                setTimeout(() => {
+
+                    selectedAlgo.className = "algoSelection";
+                },500);
 
             }
         }, 80)
