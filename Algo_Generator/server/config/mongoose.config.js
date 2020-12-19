@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
- mongoose.connect("mongodb://localhost/algodb",{
+ mongoose.connect("mongodb://mongo:27017/algodb",{
      useNewUrlParser: true, 
      useUnifiedTopology: true
  })
