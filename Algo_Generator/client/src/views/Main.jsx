@@ -1,16 +1,27 @@
 import React, {useState, useEffect} from 'react';
 import AlgorithmGenerator from '../components/AlgorithmGenerator';
+import {Link} from '@reach/router'
 import axios from 'axios';
+import { Typography } from '@material-ui/core';
 
 
 const Main = props => {
-
-    const generate = () => {
+    const [algoList, setAlgoList] = useState([])
+    const [selectedAlgo, setSelectedAlgo] = useState()
+    const [isOpen, setIsOpen] = useState(false)
+    useEffect(()=> {
         axios.get('http://localhost:8000/api/algorithms')
         .then(res => {
+            console.log(res.data)
+            setAlgoList(res.data.results)
             console.log(res.data, 'This will be the Algorithms from the backend');
         })
         .catch(err => console.log(err));
+        console.log(algoList)
+    },[])
+
+    const generate = () => {
+        
         const generator = document.querySelector(".generatorArea");
         let timesrun = 0;
         let selectedAlgo;
@@ -51,8 +62,10 @@ const Main = props => {
 
     return (
         <div id="generatorContainer">
-            <AlgorithmGenerator></AlgorithmGenerator>
+            <Link to='/add'><Typography variant='h4'>Add</Typography> </Link>
+            <AlgorithmGenerator algos={algoList}></AlgorithmGenerator>
             <button onClick={generate} className="btn btn-danger mt-2 col-sm-3 mx-auto lead">Click Me!</button>
+            
         </div>
     )
 };

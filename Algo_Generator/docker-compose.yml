@@ -4,13 +4,15 @@ services:
   app:
     container_name: react-app
     restart: always
-    build: ./client
+    build: 
+      context: ./client
     ports: 
       - '80:3000'
   server: 
     container_name: server
     restart: always
-    build: .
+    build: 
+      context: ./
     ports: 
       - '8000:8000'
     links: 

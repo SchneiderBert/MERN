@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
- mongoose.connect("mongodb://mongo:27017/algodb",{
+    // "mongodb://mongo:27017/algodb" for Docker
+ mongoose.connect("mongodb://localhost/algodb",{
      useNewUrlParser: true, 
      useUnifiedTopology: true
  })

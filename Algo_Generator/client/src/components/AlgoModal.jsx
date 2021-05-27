@@ -1,12 +1,13 @@
 import React from 'react';
+import ReactDom from 'react-dom'
 
 
 const AlgoModal = props => {
 
 
-    return(
+    return ReactDom.createPortal(
         <div id="modal">
 
-        </div>
+        </div>, document.getElementById('portal')
     )
 }
