@@ -20,7 +20,7 @@
   align-content: center;
 }
 .generatorArea {
-  width: 40vw;
+  width: 70vw;
   max-height: 35vh;
   overflow-y: scroll;
   background-color: white;
@@ -31,6 +31,22 @@
 .generatorArea::-webkit-scrollbar {
   width: 0px;
   background: transparent; /* Chrome/Safari/Webkit */
+}
+.algoSelection {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 12vh;
+  margin: 0.5rem 0;
+  font-weight:bold;
+  color: black;
+  font-size: clamp(1rem, 5vh, 1.6rem);
+  border-bottom: solid 0.1rem black;
+  border-top: solid 0.1rem black;
+  width: 100%;
+  padding: 1rem;
+
 }
 
 /* @ >= 480px Mobile */
@@ -49,18 +65,7 @@
     padding: 1rem;
     font-size: 3rem;
   }
-  .algoSelection {
-    background-color: white;
-    height: 10vh;
-    margin: 0.5rem 0;
-    color: black;
-    font-size: 2rem;
-    border-bottom: solid 0.1rem black;
-    border-top: solid 0.1rem black;
-    width: 100%;
-    padding: 1rem;
-
-  }
+  
 }
 
 
